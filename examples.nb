@@ -1,0 +1,151 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      4995,        143]
+NotebookOptionsPosition[      4429,        127]
+NotebookOutlinePosition[      4768,        142]
+CellTagsIndexPosition[      4725,        139]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{"<<", "dashedTube`"}]], "Input",
+ CellChangeTimes->{{3.789482454564723*^9, 3.7894824626734257`*^9}},
+ CellLabel->"In[54]:=",ExpressionUUID->"89f2a3b5-7ae6-41bd-85ea-5a8edd5d8fbf"],
+
+Cell["Some example bezier functions:", "Text",
+ CellChangeTimes->{{3.7894824863029346`*^9, 
+  3.789482491154305*^9}},ExpressionUUID->"3143e3da-042c-4c9f-a5cf-\
+dc20c861688e"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"bsf1", "=", 
+   RowBox[{"BezierFunction", "[", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"0", ",", "0", ",", "0"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"1", "/", "2"}], ",", 
+        RowBox[{"1", "/", "2"}], ",", "1"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"1", ",", "1", ",", "1"}], "}"}]}], "}"}], "]"}]}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{"bsf2", "=", 
+   RowBox[{"BezierFunction", "[", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"0", ",", "0", ",", "0"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"1", ",", "1", ",", 
+        RowBox[{"1", "/", "2"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"1", ",", "1", ",", "1"}], "}"}]}], "}"}], "]"}]}], 
+  ";"}]}], "Input",
+ CellChangeTimes->{{3.789482491869679*^9, 3.7894824918762827`*^9}},
+ CellLabel->"In[55]:=",ExpressionUUID->"8af7019e-40e7-48f1-a76d-fefe00b38f80"],
+
+Cell[BoxData[
+ RowBox[{"Graphics3D", "[", 
+  RowBox[{"{", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"CapForm", "[", "\"\<Round\>\"", "]"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"(*", " ", 
+     RowBox[{
+      RowBox[{
+      "When", " ", "VertexColors", " ", "are", " ", "specified", " ", 
+       "globally"}], ",", " ", 
+      RowBox[{
+      "you", " ", "get", " ", "a", " ", "gradient", " ", "across", " ", "the",
+        " ", "whole", " ", "dashed", " ", "sequence", " ", "of", " ", 
+       RowBox[{"tubes", "."}]}]}], " ", "*)"}], "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"dashedTube", "[", 
+      RowBox[{"0.05", ",", "0.03", ",", 
+       RowBox[{"VertexColors", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{"Red", ",", "Green"}], "}"}]}]}], "]"}], "[", 
+     RowBox[{"bsf1", ",", "0.02"}], "]"}], ",", "\[IndentingNewLine]", 
+    "\[IndentingNewLine]", 
+    RowBox[{"(*", " ", 
+     RowBox[{
+      RowBox[{
+      "When", " ", "VertexColors", " ", "are", " ", "specified", " ", 
+       "locally"}], ",", " ", 
+      RowBox[{
+      "you", " ", "get", " ", "a", " ", "gradient", " ", "across", " ", 
+       "each", " ", "individual", " ", 
+       RowBox[{"tube", "."}]}]}], " ", "*)"}], "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"dashedTube", "[", 
+      RowBox[{"0.1", ",", "0.02"}], "]"}], "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"0", ",", "0", ",", "0"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"1", ",", "1", ",", "1"}], "}"}]}], "}"}], ",", "0.015", ",", 
+      RowBox[{"VertexColors", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{"Blue", ",", "Purple"}], "}"}]}]}], "]"}], ",", 
+    "\[IndentingNewLine]", "\[IndentingNewLine]", 
+    RowBox[{"(*", " ", 
+     RowBox[{
+     "The", " ", "tubes", " ", "understand", " ", "normal", " ", "Tube", " ", 
+      
+      RowBox[{"directives", "."}]}], " ", "*)"}], "\[IndentingNewLine]", 
+    RowBox[{"CapForm", "[", "\"\<Square\>\"", "]"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"dashedTube", "[", 
+      RowBox[{"0.03", ",", "0.03"}], "]"}], "[", 
+     RowBox[{"bsf2", ",", "0.02", ",", 
+      RowBox[{"VertexColors", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{"Red", ",", "Green"}], "}"}]}]}], "]"}]}], 
+   "\[IndentingNewLine]", "}"}], "]"}]], "Input",
+ CellChangeTimes->{{3.789482448297934*^9, 3.7894824747101917`*^9}, {
+  3.789482512599906*^9, 
+  3.7894825685848722`*^9}},ExpressionUUID->"4fd91e0f-6151-4343-9d22-\
+d01a5af92129"]
+},
+WindowSize->{808, 755},
+WindowMargins->{{132, Automatic}, {-80, Automatic}},
+FrontEndVersion->"12.0 for Mac OS X x86 (64-bit) (April 8, 2019)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 202, 3, 30, "Input",ExpressionUUID->"89f2a3b5-7ae6-41bd-85ea-5a8edd5d8fbf"],
+Cell[763, 25, 174, 3, 35, "Text",ExpressionUUID->"3143e3da-042c-4c9f-a5cf-dc20c861688e"],
+Cell[940, 30, 962, 29, 52, "Input",ExpressionUUID->"8af7019e-40e7-48f1-a76d-fefe00b38f80"],
+Cell[1905, 61, 2520, 64, 304, "Input",ExpressionUUID->"4fd91e0f-6151-4343-9d22-d01a5af92129"]
+}
+]
+*)
+
